@@ -1,0 +1,20 @@
+
+name: Uses Examples
+
+on: [push]
+
+jobs:
+  uses-example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Execute Python script
+        run: python my_script.py
