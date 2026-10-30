@@ -1,0 +1,21 @@
+
+name: Steps Examples
+
+on: [push]
+
+jobs:
+  steps-example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create directory
+        run: mkdir testmachine
+
+      - name: Get system information
+        run: uname -a > testmachine/output.txt
+
+      - name: Verify output
+        run: cat testmachine/output.txt
+
+      - name: List directories and contents
+        run: ls -alhR
